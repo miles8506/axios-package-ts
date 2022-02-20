@@ -56,6 +56,14 @@ class MSaxios {
         });
     });
   }
+
+  get<T>(config: IMainAxiosConfig): Promise<T> {
+    return this.instance.request({ ...config, method: 'GET' });
+  }
+
+  post<T>(config: IMainAxiosConfig): Promise<T> {
+    return this.instance.request({ ...config, method: 'POST' });
+  }
 }
 
 export { MSaxios };
